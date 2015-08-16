@@ -1,0 +1,87 @@
+body {
+	/* http://myphotoshopbrushes.com/brushes/id/361/ */
+	background-image: url(../img/bg_splash.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: right bottom;
+}
+
+a {
+	padding: 13px;
+	color: black;
+}
+
+	a:hover {
+		color: #e74c3c;
+	}
+
+dt {
+	font-size: 1.7em;
+	font-weight: normal;
+	padding: 10px;
+}
+
+dd {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.2em;
+	max-width: 768px;
+	margin-bottom: 1.3em;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 2.6em;
+}
+
+img {
+	float: right;
+	padding-left: 20px;
+}
+
+#about-me {
+	text-align: justify;
+}
+
+.page-header, dt {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+
+.pntr {
+	cursor: pointer;
+}
+
+	.pntr:hover {
+		background-color: white;
+	}
+
+.hover {
+	background-color: white;
+}
+
+.center {
+	text-align: center;
+}
+
+.caret {
+	color: #e74c3c;
+	margin-bottom: 3px;
+	margin-left: 6px;
+	border-width: 5px 5px 0 5px;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.toggle {
+	color: #f1c40f;
+	border-width: 5px 5px 0 5px;
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 767px) {
+	body {
+		background: none;
+	}
+}
