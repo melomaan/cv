@@ -1,5 +1,5 @@
 # CV
-Repository for my curriculum vitae page. Anyone can use this layout/design as they see fit.
+Repository for my [curriculum vitae page](https://melomaan.github.io/cv/). Anyone can use this layout/design as they see fit.
 
 ## Built using
 - [Bootstrap](http://getbootstrap.com/)
