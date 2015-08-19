@@ -14,6 +14,10 @@ a {
 		color: #e74c3c;
 	}
 
+img {
+	float: right;
+}
+
 dt {
 	font-size: 1.7em;
 	font-weight: normal;
@@ -32,13 +36,25 @@ h1 {
 	font-size: 2.6em;
 }
 
-img {
-	float: right;
-	padding-left: 20px;
-}
-
 #about-me {
 	text-align: justify;
+}
+
+.caret {
+	color: #e74c3c;
+	margin-bottom: 3px;
+	margin-left: 6px;
+	border-width: 5px 5px 0 5px;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.center {
+	text-align: center;
+}
+
+.clearfix {
+	overflow: auto;
 }
 
 .page-header, dt {
@@ -54,22 +70,6 @@ img {
 		background-color: white;
 	}
 
-.hover {
-	background-color: white;
-}
-
-.center {
-	text-align: center;
-}
-
-.caret {
-	color: #e74c3c;
-	margin-bottom: 3px;
-	margin-left: 6px;
-	border-width: 5px 5px 0 5px;
-	-webkit-transition: all .3s ease;
-	transition: all .3s ease;
-}
 
 .toggle {
 	color: #f1c40f;
