@@ -15,8 +15,8 @@ a {
 	}
 
 img {
-	float: right;
-	padding-left: 20px;
+	float: left;
+	padding-right: 15px;
 }
 
 dt {
