@@ -1,70 +1,33 @@
-(function() {
+var slide = (function() {
+    var $dtHeader = $(".dt-header"),
+        $dd = $("dd");
 
-    var infoSlide = {
+    $dd.hide();
 
-        init: function() {
-            var dtHeader = $("[class^=dt-header]");
+    // Add carets if user has JavaScript enabled
+    $("<div></div>", {
+        class: "caret"
+    }).appendTo($dtHeader);
 
-            $("dd").hide();
-            dtHeader.addClass("pntr");
-            dtHeader.prop("title", "Click to view");
+    $dtHeader.addClass("pntr")
+                .prop("title", "Click to view")
+                .on("click", infoSlide);
 
-            $("<div></div>", {
-                 class: "caret"
-            })
-                .appendTo(dtHeader);
-            this.show()
-        },
-
-        show: function() {
-            $("dl").on("click", "dt", function() {
-                $(this)
-                    .next()
-                        .slideToggle()
-                        .end()
-                    .find(".caret")
-                        .toggleClass("toggle");
-            });
-        }
-
+    function infoSlide() {
+        $(this)
+            .parent()
+            .next()
+            .slideToggle()
+            .end()
+            .find(".caret")
+            .toggleClass("toggle");
     }
+})();
 
-    infoSlide.init();
+var setAge = (function () {
+    var today = new Date().getFullYear(),
+        yearOfBirth = 1992,
+        age = today - yearOfBirth;
 
-    var equalColumns = {
-
-        init: function() {
-            $("dl").on("click", ".skill-dt", function() {
-                var tallest = 0,
-                    skillItem = $(".skill-item");
-
-                skillItem.each(function () {
-                    var thisHeight = $(this).height();
-
-                    if (thisHeight > tallest) {
-                        tallest = thisHeight;
-                    };
-                });
-
-                skillItem.height(tallest);
-            })
-        }
-
-    }
-
-    equalColumns.init();
-
-    var getAge = {
-
-        init: function() {
-            var today = new Date().getFullYear(),
-                age = today - 1992;
-
-            document.getElementById("age").innerHTML=age;
-        }
-
-    }
-
-    getAge.init();
-
+    document.getElementById("age").innerHTML=age;
 })();

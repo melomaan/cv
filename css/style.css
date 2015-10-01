@@ -41,6 +41,22 @@ h1 {
 	text-align: justify;
 }
 
+.row {
+	border-spacing: 30px 0px;
+	margin-left: -30px;
+	margin-right: -30px;
+}
+
+
+p.list-group-item-text ~ ul, 
+h4.list-group-item-heading ~ ul {
+	margin-top: 20px;
+}
+
+	.list-group-item:hover {
+		background-color: #F5F5F5;
+	}
+
 .caret {
 	color: #e74c3c;
 	margin-bottom: 3px;
@@ -52,10 +68,6 @@ h1 {
 
 .center {
 	text-align: center;
-}
-
-.clearfix {
-	overflow: auto;
 }
 
 .page-header, dt {
@@ -80,8 +92,24 @@ h1 {
     transform: rotate(-180deg);
 }
 
+@media (min-width: 768px) {
+	.col-sm-4 {
+		border-radius: 4px;
+		display: table-cell;
+		float: none;
+	}
+}
+
 @media (max-width: 767px) {
 	body {
 		background: none;
+	}
+
+	.row {
+		margin: 0;
+	}
+
+	.col-sm-4 {
+		display: block;
 	}
 }
