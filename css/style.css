@@ -47,10 +47,6 @@ dd {
 		display: none;
 	}
 
-	dd:last-of-type {
-		margin-bottom: 50px;
-	}
-
 h1 {
 	font-size: 2.6em;
 }
@@ -106,10 +102,18 @@ h4.list-group-item-heading ~ ul {
 	text-align: center;
 }
 
+.page-header {
+	padding-bottom: 25px;
+}
+
 .panel {
 	-webkit-box-shadow: none !important;
      box-shadow: none !important;
 }
+
+	.panel:last-child {
+		margin-bottom: 50px;
+	}
 
 .panel-body {
 	margin-bottom: -15px;
@@ -151,7 +155,7 @@ h4.list-group-item-heading ~ ul {
 		background: none;
 	}
 
-	dd:last-of-type {
+	.panel:last-child {
 		margin-bottom: 20px;
 	}
 
