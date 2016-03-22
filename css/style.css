@@ -5,6 +5,16 @@ body {
 	background-position: right bottom;
 }
 
+table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+	table td {
+		width: 25%; 
+	}
+
+
 a {
 	padding: 13px;
 	color: black;
@@ -41,18 +51,19 @@ h1 {
 	font-size: 2.6em;
 }
 
-#about-me {
-	text-align: justify;
-}
-
 p a {
 	padding: 0px;
-	color: #e74c3c;
+	color: #27ae60;
 }
 
 	p a:hover {
 		color: black;
 	}
+
+.glyphicon {
+	font-size: 12px;
+	color: #27ae60;
+}
 
 .row {
 	border-spacing: 30px 0px;
@@ -82,9 +93,26 @@ h4.list-group-item-heading ~ ul {
 	text-align: center;
 }
 
+.right {
+	text-align: right;
+}
+
 .page-header, dt {
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
+}
+
+.panel {
+	-webkit-box-shadow: none !important;
+     box-shadow: none !important;
+}
+
+.panel-body {
+	margin-bottom: -15px;
+}
+
+.panel-heading {
+	background-color: white !important;
 }
 
 .pntr {
@@ -114,7 +142,7 @@ h4.list-group-item-heading ~ ul {
 	}
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 	body {
 		background: none;
 	}
