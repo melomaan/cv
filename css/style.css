@@ -47,10 +47,6 @@ dd {
 		display: none;
 	}
 
-	dd:last-of-type {
-		margin-bottom: 50px;
-	}
-
 h1 {
 	font-size: 2.6em;
 }
@@ -149,10 +145,6 @@ h4.list-group-item-heading ~ ul {
 @media (max-width: 768px) {
 	body {
 		background: none;
-	}
-
-	dd:last-of-type {
-		margin-bottom: 20px;
 	}
 
 	.row {
