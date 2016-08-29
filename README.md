@@ -2,8 +2,8 @@
 Repository for my [résumé](https://usrme.github.io/cv/). Anyone can use this layout/design as they see fit.
 
 ## Built using
-- [Bootstrap](http://getbootstrap.com/)
-- [jQuery](http://jquery.com/)
-- [Watercolor Splatters](http://myphotoshopbrushes.com/brushes/id/361/)
-- [Hivelogic email obfuscation](http://hivelogic.com/enkoder/)
-- [Albion Research Ltd. Email Address Obfuscator](http://www.albionresearch.com/misc/obfuscator.php)
+- [Bootstrap](http://getbootstrap.com/) - for a ready-made stylesheet
+- [jQuery](http://jquery.com/) - for fancy drop-down sections
+- [Watercolor Splatters](http://myphotoshopbrushes.com/brushes/id/361/) - for a splash of color in the background
+- [Hivelogic email obfuscation](http://hivelogic.com/enkoder/) - for a JavaScript-based email obfuscator so no crawlers harvest my email from the source
+- [Albion Research Ltd. Email Address Obfuscator](http://www.albionresearch.com/misc/obfuscator.php) - for a back-up email obfuscator in case JavaScript is disabled
