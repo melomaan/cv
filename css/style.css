@@ -16,11 +16,18 @@ body {
 
 table {
 	table-layout: fixed;
-	width: 100%;
+	/* Remove doubled borders */
+	width: calc(100% + 2px);
+	margin-left: -1px;
+	margin-bottom: -1px;
+	border-spacing: 0.5rem;
+	border-collapse: collapse;
 }
 
 	table td {
-		width: 25%; 
+		width: 25%;
+		border: 1px solid #ddd;
+		padding: 5px;
 	}
 
 
@@ -69,6 +76,17 @@ h1 {
     margin-bottom: 10px;
 }
 
+h4 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+	* + h4 {
+		margin-top: 5px;
+		margin-bottom: 0;
+	}
+
 p {
 	margin: 0 0 10px;
 }
@@ -82,7 +100,28 @@ p {
 			color: black;
 		}
 
-.glyphicon {
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+	.list-inline>li {
+	    display: inline-block;
+	    padding-right: 5px;
+	    padding-left: 5px;
+	}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.fa-asterisk {
 	font-size: 12px;
 	color: #27ae60;
 }
@@ -99,6 +138,10 @@ main {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.list-group-item p {
+	margin-bottom: 0;
 }
 
 p.list-group-item-text ~ ul, 
@@ -133,12 +176,13 @@ h4.list-group-item-heading ~ ul {
 	text-align: right;
 }
 
-.page-header, dt {
+dt,
+header {
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
 }
 
-.page-header {
+header {
 	margin: 40px 0 20px;
 	padding-bottom: 25px;
     border-bottom: 1px solid #eee;
@@ -146,7 +190,11 @@ h4.list-group-item-heading ~ ul {
 
 .panel {
 	-webkit-box-shadow: none !important;
-     box-shadow: none !important;
+    box-shadow: none !important;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 	.panel:last-child {
@@ -155,10 +203,17 @@ h4.list-group-item-heading ~ ul {
 
 .panel-body {
 	margin-bottom: -15px;
+    padding: 15px;
 }
-
+.panel-default {
+    border-color: #ddd;
+}
 .panel-heading {
 	background-color: white !important;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .pntr {
