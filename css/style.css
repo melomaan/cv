@@ -51,6 +51,10 @@ h1 {
 	font-size: 2.6em;
 }
 
+p {
+	line-height: 48px;
+}
+
 p a {
 	padding: 0px;
 	color: #27ae60;
@@ -140,8 +144,11 @@ h4.list-group-item-heading ~ ul {
     transform: rotate(-180deg);
 }
 
-/* Media queries */
+.work-duration {
+	font-size: 0.9em;
+}
 
+/* Media queries */
 @media (min-width: 768px) {
 	.col-sm-4 {
 		border-radius: 4px;
