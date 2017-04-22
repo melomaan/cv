@@ -1,21 +1,54 @@
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 400;
+	src: 
+		local('Quicksand Regular'),
+		local('Quicksand-Regular'),
+		url(//fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvW1tXRa8TVwTICgirnJhmVJw.woff2) format('woff2'),
+		url(//fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvWz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 400;
+	src: 
+		local("Raleway"),
+		url(//fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2'),
+		url(//fonts.gstatic.com/s/raleway/v9/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-	background-image: url(../img/bg_splash.png);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: right bottom;
+	line-height: 1.42857143;
+	font-size: 14px;
+	color: #333;
 }
 
 table {
 	table-layout: fixed;
-	width: 100%;
+	/* Remove doubled borders */
+	width: calc(100% + 2px);
+	margin-left: -1px;
+	margin-bottom: -1px;
+	border-spacing: 0.5rem;
+	border-collapse: collapse;
 }
 
 	table td {
-		width: 25%; 
+		width: 25%;
+		border: 1px solid #ddd;
+		padding: 5px;
 	}
 
-
 a {
+	text-decoration: none;
 	padding: 13px;
 	color: black;
 }
@@ -27,6 +60,7 @@ a {
 img {
 	float: left;
 	padding-right: 15px;
+	shape-outside: circle();
 }
 
 dt {
@@ -41,30 +75,103 @@ dd {
 	max-width: 768px;
 	margin-bottom: 1.3em;
 	margin: 0 auto;
+	transition: max-height .4s ease-out, height .4s ease-out;
+	max-height: 1em;
+	height: 0;
+	overflow: hidden;
 }
-
-	dd.closed {
-		display: none;
-	}
 
 h1 {
 	font-size: 2.6em;
+    font-weight: 500;
+    line-height: 1.1;
+	margin-top: 20px;
+    margin-bottom: 30px;
+    text-transform: lowercase;
 }
 
+h4 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+	* + h4 {
+		margin-top: 5px;
+		margin-bottom: 0;
+	}
+
 p {
+	margin: 0 0 10px;
 	line-height: 48px;
 }
 
-p a {
-	padding: 0px;
-	color: #27ae60;
-}
-
-	p a:hover {
-		color: black;
+	p a {
+		padding: 0px;
+		color: #27ae60;
 	}
 
-.glyphicon {
+		p a:hover {
+			color: black;
+		}
+
+label[for] {
+	cursor: pointer;
+}
+
+/* Section toggling logic */
+
+.slider-controller {
+	position: absolute;
+	left: -100vw;
+	visibility: hidden;
+}
+
+.about-controller:checked ~ dl .about-content {
+	height: 100%;
+	max-height: 10em;
+}
+
+.xp-controller:checked ~ dl .xp-content,
+.edu-controller:checked ~ dl .edu-content,
+.skills-controller:checked ~ dl .skills-content {
+	height: 100%;
+	max-height: 50em;
+}
+
+.about-controller:checked ~ dl label[for="about-toggle"] .caret,
+.xp-controller:checked ~ dl label[for="xp-toggle"] .caret,
+.edu-controller:checked ~ dl label[for="edu-toggle"] .caret,
+.skills-controller:checked ~ dl label[for="skills-toggle"] .caret {
+	color: #f1c40f;
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+	.list-inline>li {
+	    display: inline-block;
+	    padding-right: 5px;
+	    padding-left: 5px;
+	}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.fa-asterisk {
 	font-size: 12px;
 	color: #27ae60;
 }
@@ -73,6 +180,18 @@ p a {
 	border-spacing: 30px 0px;
 	margin-left: -30px;
 	margin-right: -30px;
+}
+
+main {
+	max-width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.list-group-item p {
+	margin-bottom: 0;
 }
 
 p.list-group-item-text ~ ul, 
@@ -88,9 +207,14 @@ h4.list-group-item-heading ~ ul {
 	color: #e74c3c;
 	margin-bottom: 3px;
 	margin-left: 6px;
-	border-width: 5px 5px 0 5px;
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
 }
 
 .center {
@@ -101,18 +225,25 @@ h4.list-group-item-heading ~ ul {
 	text-align: right;
 }
 
-.page-header, dt {
+dt,
+header {
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
 }
 
-.page-header {
+header {
+	margin: 40px 0 20px;
 	padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
 }
 
 .panel {
 	-webkit-box-shadow: none !important;
-     box-shadow: none !important;
+    box-shadow: none !important;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 	.panel:last-child {
@@ -121,10 +252,17 @@ h4.list-group-item-heading ~ ul {
 
 .panel-body {
 	margin-bottom: -15px;
+    padding: 15px;
 }
-
+.panel-default {
+    border-color: #ddd;
+}
 .panel-heading {
 	background-color: white !important;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .pntr {
@@ -135,13 +273,33 @@ h4.list-group-item-heading ~ ul {
 		background-color: white;
 	}
 
+dl {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
 
-.toggle {
-	color: #f1c40f;
-	border-width: 5px 5px 0 5px;
-    -webkit-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+	.list-group-item:last-child {
+	    margin-bottom: 0;
+	    border-bottom-right-radius: 4px;
+	    border-bottom-left-radius: 4px;
+	}
+
+	.list-group-item:first-child {
+	    border-top-left-radius: 4px;
+	    border-top-right-radius: 4px;
+	}
+
+.table-hover > tbody > tr:hover {
+    background-color: #f5f5f5;
 }
 
 .work-duration {
@@ -150,18 +308,29 @@ h4.list-group-item-heading ~ ul {
 
 /* Media queries */
 @media (min-width: 768px) {
-	.col-sm-4 {
+    body {
+		background-image: url(../img/bg_splash.png);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: right bottom;
+    }
+
+    .col-sm-4 {
 		border-radius: 4px;
 		display: table-cell;
 		float: none;
 	}
 }
 
-@media (max-width: 768px) {
-	body {
-		background: none;
-	}
+@media (min-width: 25em) {
+    html {
+    	overflow: auto;
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    }
+}
 
+@media (max-width: 768px) {
 	.panel:last-child {
 		margin-bottom: 20px;
 	}
