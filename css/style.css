@@ -1,3 +1,15 @@
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 400;
+	src: 
+		local('Quicksand Regular'),
+		local('Quicksand-Regular'),
+		url("../fonts/Quicksand/Quicksand-Regular.ttf"),
+		url(http://fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvW1tXRa8TVwTICgirnJhmVJw.woff2) format('woff2'),
+		url(http://fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvWz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
 *,
 *::before,
 *::after {
@@ -5,10 +17,6 @@
 }
 
 body {
-	background-image: url(../img/bg_splash.png);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: right bottom;
 	line-height: 1.42857143;
 	font-size: 14px;
 	color: #333;
@@ -61,19 +69,19 @@ dd {
 	max-width: 768px;
 	margin-bottom: 1.3em;
 	margin: 0 auto;
+	transition: max-height .4s ease-out, height .4s ease-out;
+	max-height: 1em;
+	height: 0;
+	overflow: hidden;
 }
-
-	dd.closed {
-		display: none;
-	}
 
 h1 {
 	font-size: 2.6em;
-	font-family: inherit;
     font-weight: 500;
     line-height: 1.1;
 	margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    text-transform: lowercase;
 }
 
 h4 {
@@ -99,6 +107,43 @@ p {
 		p a:hover {
 			color: black;
 		}
+
+label[for] {
+	cursor: pointer;
+}
+
+.slider-controller {
+	position: absolute;
+	left: -100vw;
+	visibility: hidden;
+}
+
+.about-controller:checked ~ dl .about-content {
+	height: 100%;
+	max-height: 10em;
+}
+
+.xp-controller:checked ~ dl .xp-content,
+.edu-controller:checked ~ dl .edu-content,
+.skills-controller:checked ~ dl .skills-content {
+	height: 100%;
+	max-height: 50em;
+}
+
+.about-controller:checked ~ dl label[for="about-toggle"] .caret,
+.xp-controller:checked ~ dl label[for="xp-toggle"] .caret,
+.edu-controller:checked ~ dl label[for="edu-toggle"] .caret,
+.skills-controller:checked ~ dl label[for="skills-toggle"] .caret {
+	color: #f1c40f;
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.slider-controllers {
+	position: fixed;
+	left: 200vw;
+}
 
 ol, ul {
     margin-top: 0;
@@ -163,7 +208,7 @@ h4.list-group-item-heading ~ ul {
     display: inline-block;
     vertical-align: middle;
     border-top: 4px dashed;
-    border-top: 4px solid\9;
+    border-top: 4px solid;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
 }
@@ -224,15 +269,6 @@ header {
 		background-color: white;
 	}
 
-
-.toggle {
-	color: #f1c40f;
-	border-width: 5px 5px 0 5px;
-    -webkit-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-}
-
 dl {
     margin-top: 0;
     margin-bottom: 20px;
@@ -258,21 +294,36 @@ dl {
 	    border-top-right-radius: 4px;
 	}
 
+.table-hover > tbody > tr:hover {
+    background-color: #f5f5f5;
+}
+
 /* Media queries */
 
 @media (min-width: 768px) {
-	.col-sm-4 {
+    body {
+		background-image: url(../img/bg_splash.png);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: right bottom;
+    }
+
+    .col-sm-4 {
 		border-radius: 4px;
 		display: table-cell;
 		float: none;
 	}
 }
 
-@media (max-width: 768px) {
-	body {
-		background: none;
-	}
+@media (min-width: 25em) {
+    html {
+    	overflow: auto;
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    }
+}
 
+@media (max-width: 768px) {
 	.panel:last-child {
 		margin-bottom: 20px;
 	}
