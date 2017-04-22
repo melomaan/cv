@@ -52,8 +52,6 @@ a {
 img {
 	float: left;
 	padding-right: 15px;
-	vertical-align: middle;
-	border: 0;
 	shape-outside: circle();
 }
 
@@ -138,11 +136,6 @@ label[for] {
     -webkit-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
     transform: rotate(-180deg);
-}
-
-.slider-controllers {
-	position: fixed;
-	left: 200vw;
 }
 
 ol, ul {
