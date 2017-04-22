@@ -128,14 +128,14 @@ label[for] {
 
 .about-controller:checked ~ dl .about-content {
 	height: 100%;
-	max-height: 10em;
+	max-height: 25em;
 }
 
 .xp-controller:checked ~ dl .xp-content,
 .edu-controller:checked ~ dl .edu-content,
 .skills-controller:checked ~ dl .skills-content {
 	height: 100%;
-	max-height: 50em;
+	max-height: 115em;
 }
 
 .about-controller:checked ~ dl label[for="about-toggle"] .caret,
